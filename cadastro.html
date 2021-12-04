@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adivinha Palavras</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link href="./assets/style/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="/"><h1>Descubra a palavra</h1></a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="btn btn-primary" href="cadastro.html"
+              >Cadastras palavras</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="listagem.html">Listar palavras</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="/game.html">Jogar</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section class="container">
+      <div class="form-box app-register">
+        <h1>Cadastro de palavras</h1>
+        <form>
+          <div class="mb-3">
+            <label for="palavra" class="form-label">Palavra </label>
+            <input id="inword" type="text" class="form-control" id="palavra" />
+          </div>
+          <div class="mb-3">
+            <label for="dica-palavra" class="form-label">Dica palavra</label>
+            <input
+              id="inword-dica"
+              type="text"
+              class="form-control"
+              id="dica-palavra"
+            />
+          </div>
+          <div class="mb-3">
+            <button id="btn-register" class="btn btn-primary">Cadastrar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

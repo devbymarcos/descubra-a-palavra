@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adivinha Palavras</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="./assets/style/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="/"><h1>Descubra a palavra</h1></a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="btn btn-primary" href="cadastro.html"
+              >Cadastras palavras</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="listagem.html">Listar palavras</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="/game.html">Jogar</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section class="container">
+      <div class="app-register">
+        <div class="row">
+          <div class="col-sm-12">
+            <h2>Descubra a palavra:</h2>
+            <div class="box-word">
+              <span id="outWord"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row g-3 align-items-center">
+          <div class="col-auto">
+            <h2>Aposte uma letra</h2>
+          </div>
+          <div class="col-auto">
+            <input
+              id="inLetter"
+              type="text"
+              class="form-control"
+              aria-describedby="passwordHelpInline"
+            />
+          </div>
+          <div class="col-auto">
+            <button id="btnThrow" class="btn-lg btn btn-primary">
+              Apostar letra
+            </button>
+          </div>
+        </div>
+        <div class="row box-game">
+          <div class="col-sm-8">
+            <h2>
+              Vidas:
+              <span id="outChance">4</span>
+            </h2>
+            <h2>
+              Erros:
+              <span id="outError">*</span>
+            </h2>
+            <h2 id="finalMessage"></h2>
+          </div>
+          <div class="col-sm-4">
+            <h3>Situação do jogador</h3>
+            <p class="status"><i class="fas fa-smile-beam"></i></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <button id="viewTip" class="btn btn-danger">Ver dica</button>
+            <span id="outTip">* Custo: 1 chance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
