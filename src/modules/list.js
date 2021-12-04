@@ -1,11 +1,13 @@
 export default function initList() {
   const table = document.querySelector("#list-word");
-  if (table) {
+  const inputCheckbox = document.querySelector("input[type=checkbox]");
+
+  if (table && localStorage.getItem("word") != "") {
     let WordGet, TipGet;
     if (localStorage.getItem("word")) {
       WordGet = localStorage.getItem("word").split(";");
       TipGet = localStorage.getItem("tip").split(";");
-      }
+    }
 
     let row, col1, col2, col3;
 

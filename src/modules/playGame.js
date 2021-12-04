@@ -8,6 +8,20 @@ export default function playGame() {
   const btnThrow = document.querySelector("#btnThrow");
   const viewTip = document.querySelector("#viewTip");
   const outWord = document.querySelector("#outWord");
+
+  function existWord() {
+    if (localStorage.getItem("word")) {
+      assembleGame();
+    } else {
+      alert("Cadastre palavras para jogar");
+      inletter.disabled = true;
+      btnThrow.disabled = true;
+      viewTip.disabled = true;
+    }
+  }
+
+  existWord();
+
   function assembleGame() {
     let words = localStorage.getItem("word").split(";");
     let tip = localStorage.getItem("tip").split(";");
@@ -31,15 +45,6 @@ export default function playGame() {
     }
   }
   // Montar jogo se existir palavra  cadastrada
-
-  if (localStorage.getItem("word")) {
-    assembleGame();
-  } else {
-    alert("Cadastre palavras para jogar");
-    inletter.disabled = true;
-    btnThrow.disabled = true;
-    viewTip.disabled = true;
-  }
 
   function play() {
     const outWord = document.querySelector("#outWord");
