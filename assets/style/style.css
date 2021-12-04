@@ -9,7 +9,7 @@ th {
 }
 
 .app-register {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 .titleGame {
   text-align: center;
@@ -17,34 +17,32 @@ th {
   margin-bottom: 3rem;
   margin-top: 2rem;
 }
-li {
-  margin: 1rem;
-}
+
 .status {
   font-size: 10rem;
 }
+
 .box-game {
   margin-top: 2rem;
 }
+.box-game p {
+  text-align: center;
+}
 .fa-smile-beam {
-  animation: balance 1s infinite both;
+  animation: balance 1s ease-in-out infinite both;
 }
 
 @keyframes balance {
   0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(5deg);
-  }
-  50% {
     transform: rotate(10deg);
   }
-  75% {
-    transform: rotate(5deg);
-  }
-  100% {
+
+  50% {
     transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
   }
 }
 .fa-sad-tear {
@@ -91,4 +89,37 @@ li {
 #inLetter {
   font-size: 30px;
   text-transform: uppercase;
+}
+
+.fa-laugh-beam {
+  position: relative;
+  animation: jump 1s cubic-bezier(0.7, 0.3, 0.93, 0.67) infinite;
+}
+
+@keyframes jump {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 20px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+.nav-link {
+  color: #fff !important;
+}
+
+@media (max-width: 400px) {
+  .status {
+    font-size: 5rem;
+  }
+  .app-register {
+    margin-top: 10px;
+  }
+  .box-word {
+    margin-top: 1rem;
+  }
 }

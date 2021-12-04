@@ -24,26 +24,47 @@
     <nav class="navbar">
       <div class="container">
         <a class="navbar-brand" href="/"><h1>Descubra a palavra</h1></a>
-        <ul class="nav justify-content-end">
+
+        <ul class="nav justify-content-start">
           <li class="nav-item">
-            <a class="btn btn-primary" href="cadastro.html"
-              >Cadastras palavras</a
-            >
+            <a class="nav-link" href="cadastro.html">Cadastras palavras</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-primary" href="listagem.html">Listar palavras</a>
+            <a class="nav-link" href="listagem.html">Listar palavras</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-primary" href="/game.html">Jogar</a>
+            <a class="nav-link" href="/game.html">Jogar</a>
           </li>
         </ul>
       </div>
     </nav>
     <section class="container">
       <div class="app-register">
-        <div class="row">
+        <div class="row box-game">
           <div class="col-sm-12">
+            <p class="status"><i class="fas fa-smile-beam"></i></p>
+          </div>
+          <div class="col-sm-12">
+            <h2 id="finalMessage"></h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
             <h2>Descubra a palavra:</h2>
+            <h2>
+              Vidas:
+              <span id="outChance">4</span>
+            </h2>
+            <h2>
+              Erros:
+              <span id="outError">*</span>
+            </h2>
+          </div>
+          <div class="col-sm-6">
+            <button id="viewTip" class="btn btn-danger">Ver dica</button>
+            <span id="outTip">* Custo: 1 chance</span>
+          </div>
+          <div class="row">
             <div class="box-word">
               <span id="outWord"></span>
             </div>
@@ -65,28 +86,6 @@
             <button id="btnThrow" class="btn-lg btn btn-primary">
               Apostar letra
             </button>
-          </div>
-        </div>
-        <div class="row box-game">
-          <div class="col-sm-8">
-            <h2>
-              Vidas:
-              <span id="outChance">4</span>
-            </h2>
-            <h2>
-              Erros:
-              <span id="outError">*</span>
-            </h2>
-            <h2 id="finalMessage"></h2>
-          </div>
-          <div class="col-sm-4">
-            <p class="status"><i class="fas fa-smile-beam"></i></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <button id="viewTip" class="btn btn-danger">Ver dica</button>
-            <span id="outTip">* Custo: 1 chance</span>
           </div>
         </div>
       </div>
