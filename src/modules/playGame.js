@@ -43,6 +43,7 @@ export default function playGame() {
     if (chance == 0) {
       finalMessage.className = "text-danger";
       finalMessage.textContent = `Ah...é ${wordRandom}. Você perdeu`;
+      changeStatus(7);
       endGame();
     } else if (outWord.textContent == wordRandom) {
       finalMessage.className = "text-success";

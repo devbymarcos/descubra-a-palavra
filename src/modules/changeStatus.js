@@ -27,5 +27,8 @@ export default function changeStatus(number) {
     case 6:
       status.innerHTML = `<i class="fas fa-laugh-beam"></i>`;
       break;
+    case 7:
+      status.innerHTML = `<i class="fas fa-sad-cry"></i>`;
+      break;
   }
 }
