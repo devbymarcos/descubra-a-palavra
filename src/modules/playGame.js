@@ -3,9 +3,8 @@ import changeStatus from "./changeStatus";
 export default function playGame() {
   let wordRandom;
   let tipRandom;
+  let inletter = "";
 
-  const inletter = document.querySelector("#inLetter");
-  const btnThrow = document.querySelector("#btnThrow");
   const viewTip = document.querySelector("#viewTip");
   const outWord = document.querySelector("#outWord");
 
@@ -30,55 +29,9 @@ export default function playGame() {
 
       outWord.textContent = newWord;
     }
+    //monta o tecladop com as letras
     wordKeys();
-  }
-
-  function play() {
-    const outWord = document.querySelector("#outWord");
-    const outChance = document.querySelector("#outChance");
-    const outError = document.querySelector("#outError");
-
-    let letter = inletter.value.toUpperCase();
-
-    if (letter == "" || letter.length != 1) {
-      alert("Informe uma letra");
-      inletter.focus();
-      return;
-    }
-
-    let error = outError.textContent;
-    let wordSingle = outWord.textContent;
-
-    if (error.indexOf(letter) >= 0 || wordSingle.indexOf(letter) >= 0) {
-      alert("Você ja apostou  esta letra");
-      inletter.focus();
-    }
-    if (wordRandom.indexOf(letter) >= 0) {
-      let newWord = "";
-
-      for (let i = 0; i < wordRandom.length; i++) {
-        if (wordRandom.charAt(i) == letter) {
-          newWord += letter;
-        } else {
-          newWord += wordSingle.charAt(i);
-        }
-      }
-      outWord.textContent = newWord;
-    } else {
-      error += letter;
-      outError.textContent = error;
-      let chance = Number(outChance.textContent) - 1;
-      outChance.textContent = chance;
-      changeStatus(chance);
-    }
-
-    verifyEnd();
-    inletter.value = "";
-    inletter.focus();
-  }
-
-  if (btnThrow) {
-    btnThrow.addEventListener("click", play);
+    inletter = document.querySelectorAll(".keyChar");
   }
 
   function verifyEnd() {
@@ -102,8 +55,9 @@ export default function playGame() {
   function endGame() {
     let outTip = document.querySelector("#outTip");
     outTip.textContent = `* Clique no botão 'jogar' que esta no menu para jogar novamente`;
-    inletter.disabled = true;
-    btnThrow.disabled = true;
+    inletter.forEach((item) => {
+      item.style.display = "none";
+    });
     viewTip.disabled = true;
   }
   function wordKeys() {
@@ -147,11 +101,55 @@ export default function playGame() {
       assembleGame();
     } else {
       alert("Cadastre palavras para jogar");
-      inletter.disabled = true;
-      btnThrow.disabled = true;
       viewTip.disabled = true;
     }
   }
 
   existWord();
+
+  function play({ target }) {
+    const outWord = document.querySelector("#outWord");
+    const outChance = document.querySelector("#outChance");
+    const outError = document.querySelector("#outError");
+
+    //pega a letra clicada
+
+    let letter = target.textContent.toUpperCase();
+
+    if (letter == "" || letter.length != 1) {
+      alert("Informe uma letra");
+      return;
+    }
+
+    let error = outError.textContent;
+    let wordSingle = outWord.textContent;
+
+    if (error.indexOf(letter) >= 0 || wordSingle.indexOf(letter) >= 0) {
+      alert("Você ja apostou  esta letra");
+    }
+    if (wordRandom.indexOf(letter) >= 0) {
+      let newWord = "";
+
+      for (let i = 0; i < wordRandom.length; i++) {
+        if (wordRandom.charAt(i) == letter) {
+          newWord += letter;
+        } else {
+          newWord += wordSingle.charAt(i);
+        }
+      }
+      outWord.textContent = newWord;
+    } else {
+      error += letter;
+      outError.textContent = error;
+      let chance = Number(outChance.textContent) - 1;
+      outChance.textContent = chance;
+      changeStatus(chance);
+    }
+
+    verifyEnd();
+  }
+
+  inletter.forEach((item) => {
+    item.addEventListener("click", play);
+  });
 }
