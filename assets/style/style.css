@@ -112,6 +112,18 @@ th {
   color: #fff !important;
 }
 
+.keyboard {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.keyboard p {
+  font-size: 30px;
+  padding: 10px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
 @media (max-width: 400px) {
   .status {
     font-size: 5rem;

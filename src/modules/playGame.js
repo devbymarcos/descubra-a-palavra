@@ -9,19 +9,6 @@ export default function playGame() {
   const viewTip = document.querySelector("#viewTip");
   const outWord = document.querySelector("#outWord");
 
-  function existWord() {
-    if (localStorage.getItem("word")) {
-      assembleGame();
-    } else {
-      alert("Cadastre palavras para jogar");
-      inletter.disabled = true;
-      btnThrow.disabled = true;
-      viewTip.disabled = true;
-    }
-  }
-
-  existWord();
-
   function assembleGame() {
     let words = localStorage.getItem("word").split(";");
     let tip = localStorage.getItem("tip").split(";");
@@ -43,8 +30,8 @@ export default function playGame() {
 
       outWord.textContent = newWord;
     }
+    wordKeys();
   }
-  // Montar jogo se existir palavra  cadastrada
 
   function play() {
     const outWord = document.querySelector("#outWord");
@@ -90,6 +77,10 @@ export default function playGame() {
     inletter.focus();
   }
 
+  if (btnThrow) {
+    btnThrow.addEventListener("click", play);
+  }
+
   function verifyEnd() {
     const outChance = document.querySelector("#outChance");
     const finalMessage = document.querySelector("#finalMessage");
@@ -115,8 +106,52 @@ export default function playGame() {
     btnThrow.disabled = true;
     viewTip.disabled = true;
   }
+  function wordKeys() {
+    const place = document.querySelector("#keyboard");
+    const char = [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V",
+      "X",
+      "Z",
+    ];
 
-  if (btnThrow) {
-    btnThrow.addEventListener("click", play);
+    char.forEach((item) => {
+      let html = document.createElement("p");
+      html.classList.add("keyChar");
+      html.textContent = item;
+      place.appendChild(html);
+    });
   }
+
+  function existWord() {
+    if (localStorage.getItem("word")) {
+      assembleGame();
+    } else {
+      alert("Cadastre palavras para jogar");
+      inletter.disabled = true;
+      btnThrow.disabled = true;
+      viewTip.disabled = true;
+    }
+  }
+
+  existWord();
 }
