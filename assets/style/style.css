@@ -126,12 +126,15 @@ th {
 }
 @media (max-width: 400px) {
   .status {
-    font-size: 5rem;
+    font-size: 4rem;
   }
   .app-register {
     margin-top: 10px;
   }
   .box-word {
     margin-top: 1rem;
+  }
+  .box-word {
+  font-size: 40px;
   }
 }
