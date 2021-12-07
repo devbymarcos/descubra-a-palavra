@@ -10,6 +10,13 @@ th {
 .max-width {
   max-width: 900px;
 }
+.modal-content {
+  background-color: #222 !important;
+}
+
+.list-group-item {
+  background-color: #222 !important;
+}
 .app-register {
   margin-top: 2rem;
 }

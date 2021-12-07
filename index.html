@@ -23,20 +23,67 @@
   <body>
     <section class="container max-width">
       <div class="app-register">
-        <h1 class="titleGame">Jogue</h1>
-        <h1 class="titleGame">Descubra a palavra</h1>
-
-        <ul class="nav justify-content-between">
-          <li class="nav-item">
-            <a class="btn btn-primary" href="cadastro.html"> Cadastrar </a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-primary" href="listagem.html">Listar</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-primary" href="/game.html">Jogar</a>
-          </li>
-        </ul>
+        <nav class="navbar">
+          <div class="container">
+            <a class="navbar-brand" href="/"><h1>Descubra a palavra</h1></a>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="staticBackdrop"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Menu</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <nav class="nav flex-column">
+                      <a class="nav-link" href="/">Home</a>
+                      <a
+                        class="nav-link active"
+                        aria-current="page"
+                        href="cadastro.html"
+                        >Cadastras palavras</a
+                      >
+                      <a class="nav-link" href="listagem.html"
+                        >Listar palavras</a
+                      >
+                      <a class="nav-link" href="game.html">Iniciar jogo</a>
+                    </nav>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
     </section>
     <script
