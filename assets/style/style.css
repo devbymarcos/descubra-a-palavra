@@ -7,14 +7,16 @@ td,
 th {
   color: #fff;
 }
-
+.max-width {
+  max-width: 900px;
+}
 .app-register {
   margin-top: 2rem;
 }
 .titleGame {
   text-align: center;
   font-size: 60px;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   margin-top: 2rem;
 }
 
