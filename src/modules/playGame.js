@@ -2,7 +2,7 @@ import changeStatus from "./changeStatus";
 
 export default function playGame() {
   let wordRandom;
-  let tipRandom;
+  let tipRandom = "";
   let inletter = "";
 
   const viewTip = document.querySelector("#viewTip");
@@ -153,4 +153,25 @@ export default function playGame() {
   inletter.forEach((item) => {
     item.addEventListener("click", play);
   });
+
+  function showTip() {
+    const outChance = document.querySelector("#outChance");
+    const outError = document.querySelector("#outError");
+    const outTip = document.querySelector("#outTip");
+
+    let error = outError.textContent;
+
+    if (error.indexOf("*") >= 0) {
+      alert("você ja solicitou a dica");
+      return;
+    }
+
+    outTip.textContent = " * " + tipRandom;
+    outError.textContent = error + " * ";
+    let chance = Number(outChance.textContent) - 1;
+    outChance.textContent = chance;
+    changeStatus(8);
+    verifyEnd();
+  }
+  viewTip.addEventListener("click", showTip);
 }

@@ -30,5 +30,11 @@ export default function changeStatus(number) {
     case 7:
       status.innerHTML = `<i class="fas fa-sad-cry"></i>`;
       break;
+    case 8:
+      status.innerHTML = `<i class="fas fa-grin-tongue-wink"></i>`;
+      setTimeout(() => {
+        status.innerHTML = `<i class="fas fa-smile-beam"></i>`;
+      }, 3000);
+      break;
   }
 }

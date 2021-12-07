@@ -119,9 +119,10 @@ th {
   flex-wrap: wrap;
 }
 .keyboard p {
+  width: 39px;
+  text-align: center;
   font-size: 30px;
-  padding: 10px;
-  border: 1px solid #fff;
+   border: 1px solid #fff;
   cursor: pointer;
 }
 @media (max-width: 400px) {
