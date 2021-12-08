@@ -137,6 +137,14 @@ th {
   border: 1px solid #fff;
   cursor: pointer;
 }
+.box-image {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.box-text-content {
+  width: 100%;
+  margin: 0 auto;
+}
 @media (max-width: 400px) {
   .status {
     font-size: 4rem;
