@@ -1,3 +1,5 @@
+import message from "./message";
+
 export default function initRegister() {
   const inWordInput = document.querySelector("#inword");
   const inWordInputTip = document.querySelector("#inword-dica");
@@ -10,12 +12,12 @@ export default function initRegister() {
 
     console.log(inWord.indexOf(" "));
     if (inWord == "" || inWord.indexOf(" ") >= 0) {
-      alert("Preencha uma palavra sem espaços");
+      message("Preencha uma palavra sem espaços", "warning");
       inWordInput.focus();
       return;
     }
     if (inTip == "") {
-      alert("Insira uma dica");
+      message("Insira uma dica", "warning");
       inWordInputTip.focus();
       return;
     }
@@ -24,7 +26,7 @@ export default function initRegister() {
       let dataWord = localStorage.getItem("word").split(";");
 
       if (dataWord.includes(inWord)) {
-        alert("Essa palavra já existe");
+        message("Essa palavra já existe", "error");
         inWordInput.value = "";
         inWordInput.focus();
 
@@ -37,7 +39,10 @@ export default function initRegister() {
 
       //valida a gravação e limpa inputs
       if (dataInsertWord.includes(inWord)) {
-        alert("Palavra " + inWord + " cadastrada com sucesso");
+        message(
+          "Palavra " + "'" + inWord + "'" + " cadastrada com sucesso",
+          "success"
+        );
         inWordInput.value = "";
         inWordInputTip.value = "";
         inWordInput.focus();
@@ -49,7 +54,10 @@ export default function initRegister() {
 
       //valida a gravação e limpa inputs
       if (insertWord.includes(inWord)) {
-        alert("Palavra " + inWord + " cadastrada com sucesso");
+        message(
+          "Palavra " + "'" + inWord + "'" + " cadastrada com sucesso",
+          "success"
+        );
         inWordInput.value = "";
         inWordInputTip.value = "";
         inWordInput.focus();

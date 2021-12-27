@@ -1,4 +1,5 @@
 import changeStatus from "./changeStatus";
+import message from "./message";
 
 export default function playGame() {
   let wordRandom;
@@ -101,7 +102,7 @@ export default function playGame() {
     if (localStorage.getItem("word")) {
       assembleGame();
     } else {
-      alert("Cadastre palavras para jogar");
+      message("Cadastre palavras para jogar", "error");
       viewTip.disabled = true;
     }
   }
@@ -118,7 +119,7 @@ export default function playGame() {
     let letter = target.textContent.toUpperCase();
 
     if (letter == "" || letter.length != 1) {
-      alert("Informe uma letra");
+      message("Informe uma letra", "warning");
       return;
     }
 
@@ -126,7 +127,7 @@ export default function playGame() {
     let wordSingle = outWord.textContent;
 
     if (error.indexOf(letter) >= 0 || wordSingle.indexOf(letter) >= 0) {
-      alert("Você ja apostou  esta letra");
+      message("Você ja apostou  esta letra", "error");
     }
     if (wordRandom.indexOf(letter) >= 0) {
       let newWord = "";
@@ -162,7 +163,7 @@ export default function playGame() {
     let error = outError.textContent;
 
     if (error.indexOf("*") >= 0) {
-      alert("você ja solicitou a dica");
+      message("você ja solicitou a dica", "error");
       return;
     }
 
